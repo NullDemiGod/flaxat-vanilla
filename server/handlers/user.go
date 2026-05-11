@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"flaxat/server/models"
-	"log"
 	"net/http"
 	"os"
 	"strconv"
@@ -71,7 +70,6 @@ func Register(response http.ResponseWriter, request *http.Request) {
 
 	createdUser, err := models.CreateUser(bodyStructure.Username, bodyStructure.Email, string(hashedPassword))
 	if err != nil {
-		log.Println("Critical: ", err)
 		writeJSON(response, http.StatusBadRequest, map[string]string{
 			"error": "Username Or Email Already Exists",
 		})

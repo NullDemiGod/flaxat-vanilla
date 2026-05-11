@@ -1,6 +1,6 @@
 import { getToken } from "./auth.js"
 
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = ""
 
 function getAuthorizationHeader() {
     return { "Authorization": `Bearer ${getToken()}` }
