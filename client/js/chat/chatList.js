@@ -3,12 +3,19 @@
 
 // Get a reference for the scrollable HTML element responsible for the chat list 
 const chatsList = document.getElementById("scrollable_sidebar_chats")
+const chatSidebarButton = document.getElementById("toggle_sidebar_phone")
+const chatSidebar = document.getElementById("chats_sidebar")
 
 // This function handles attaching the callback to the HTML element we imported earlier
 // Because this is a display driver, it doesn't know what should happen if a chat is clicked on
 // The behavior is delegated to chat.js, where all the callbacks/handlers are defined,
 // and subsequently passed to the init functions of each display driver
 export function initChatList(onChatClick) {
+    chatSidebarButton.addEventListener("click", () => {
+        chatSidebar.classList.add("open")
+    })
+
+
     chatsList._onChatClick = onChatClick
 }
 
@@ -68,7 +75,7 @@ export function renderChatList(userChats, currentUserID, allUsers, onlineUsersID
         bottomDiv.appendChild(onlineIndicatorSpan)
         newChatItem.appendChild(usernameSpan)
         newChatItem.appendChild(bottomDiv)
-
+        
         // Attach the callback to each chat item
         // And also make the chat highlighted once clicked
         newChatItem.addEventListener("click", () => {
@@ -76,6 +83,8 @@ export function renderChatList(userChats, currentUserID, allUsers, onlineUsersID
                 item.classList.remove("active")
             })
             newChatItem.classList.add("active")
+            if (window.innerWidth < 768)
+                chatSidebar.classList.remove("open")
             chatsList._onChatClick(chat, recipientObject)
         })
 
