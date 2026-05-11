@@ -344,21 +344,33 @@ button {
 }
 
 @media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr; 
+    }
+    
+    nav, .chat_box_container {
+        grid-column: 1 / 2; 
+    }
+
     .toggle_sidebar_phone {
         display: block;
     }
 
-    .chats_sidebar {
+    .chats_sidebar, .users_sidebar {
         position: fixed;
         top: 0;
         left: 0;
         height: 100vh;
         z-index: 100;
-
         transform: translateX(-100%);
     }
 
-    .chats_sidebar.open {
+    .users_sidebar {
+        z-index: 1000;
+        display: flex !important; 
+    }
+
+    .chats_sidebar.open, .users_sidebar.open {
         transform: translateX(0);
     }
 }
