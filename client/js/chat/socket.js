@@ -1,5 +1,6 @@
 // The Backend API endpoint responsible for handling WebSocket connections
-const BASE_URL = "ws://localhost:3000/ws"
+const protocol = window.location.protocol === "https:" ? "wss:" : "ws:"
+const BASE_URL = `${protocol}//${window.location.host}/ws`
 
 // We define a global socket object so our chat function can target it
 let socket = null

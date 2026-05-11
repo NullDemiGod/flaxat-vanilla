@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	"time"
+	"log"
 
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
@@ -70,6 +71,7 @@ func Register(response http.ResponseWriter, request *http.Request) {
 
 	createdUser, err := models.CreateUser(bodyStructure.Username, bodyStructure.Email, string(hashedPassword))
 	if err != nil {
+		log.Println("Fatal: ", err)
 		writeJSON(response, http.StatusBadRequest, map[string]string{
 			"error": "Username Or Email Already Exists",
 		})
