@@ -22,7 +22,7 @@ body {
     color: var(--text-primary);
     font-family: monospace;
 
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     overflow: hidden;
 
@@ -333,10 +333,11 @@ button {
 .toggle_sidebar_phone {
     display: none;
     border: none;
-    background-color: none;
-    color: var(--text-secondary);
+    background-color: transparent;
+    color: var(--palette-primary);
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    margin-left: 20px;
 }
 
 .chats_sidebar, .users_sidebar {
@@ -360,7 +361,8 @@ button {
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
+        height: 100dvh;
+	width: 100dvw;
         z-index: 100;
         transform: translateX(-100%);
     }
@@ -372,5 +374,12 @@ button {
 
     .chats_sidebar.open, .users_sidebar.open {
         transform: translateX(0);
+    }
+
+    button {
+    -webkit-appearance: none;
+    appearance: none;
+
+    -webkit-tap-highlight-color: transparent;
     }
 }
