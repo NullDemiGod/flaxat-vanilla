@@ -14,11 +14,13 @@ export function initUsersList(onUserClick) {
     // If we click on the + button, it opens the sidebar
     openSidebarButton.addEventListener("click", () => {
         usersSidebar.classList.remove("hidden")
+	usersSidebar.classList.add("open");
     })
 
     // If we click on the X button, it closes the sidebar
     closeSidebarButton.addEventListener("click", () => {
         usersSidebar.classList.add("hidden")
+	usersSidebar.classList.remove("open");
     })
 
     // Attach the callback to the list, for later use

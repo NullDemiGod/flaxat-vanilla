@@ -339,7 +339,7 @@ button {
     font-size: 20px;
 }
 
-.chats_sidebar {
+.chats_sidebar, .users_sidebar {
     transition: transform 0.2s ease-in-out;
 }
 
@@ -348,7 +348,7 @@ button {
         display: block;
     }
 
-    .chats_sidebar {
+    .chats_sidebar, .users_sidebar {
         position: fixed;
         top: 0;
         left: 0;
@@ -358,7 +358,12 @@ button {
         transform: translateX(-100%);
     }
 
-    .chats_sidebar.open {
+    .users_sidebar {
+	display: flex !important;
+	z-index: 1000;
+    }
+
+    .chats_sidebar.open, .users_sidebar.open {
         transform: translateX(0);
     }
 }
