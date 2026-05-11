@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/chat.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="js/chat/chat.js"></script>
+    </head>
+    <body>
+        <nav class="navigation_bar">
+            <h1 class="logo_title">FlaXat</h1>
+            <a class="logout_button" id="logout_button">Log Out</a>
+        </nav>
+        <aside class="chats_sidebar" id="chats_sidebar">
+            <header class="chats_header" id="chats_header">
+                <h2 class="chats_title" id="chats_title">Active Chats</h2>
+                <button class="chats_button" id="open_users_sidebar">+</button>
+            </header>
+
+            <ul class="scrollable_sidebar" id="scrollable_sidebar_chats">
+                <!-- Javascript will inject active chats in the form of <li> elements here -->
+            </ul>
+        </aside>
+
+        <aside class="users_sidebar hidden" id="users_sidebar">
+            <header class="users_header" id="users_header">
+                <h2 class="users_sidebar_title">Start a new conversation</h2>
+                <button class="users_button" id="close_users_sidebar">X</button>
+            </header>
+
+            <ul class="scrollable_sidebar" id="scrollable_sidebar_users">
+                <!-- Javascript will inject users in the form of <li> elements here -->
+            </ul>
+        </aside>
+
+        <main class="chat_box_container" id="chat_box_container">
+            <div class="empty_chat" id="empty_chat">
+                <h2 class="empty_chat_title">Open a conversation to start chatting!</h2>
+            </div>
+
+            <div class="active_chat_container hidden" id="active_chat_container">
+                <header class="recipient_info" id="recipient_info">
+                    <!-- Javascript will inject recipient information here -->
+                </header>
+
+                <div class="message_history" id="message_history">
+                    <!-- Javascript will inject message bubbles here -->
+                </div>
+                <form id="message_form" class="message_form">
+                    <input type="text" autocorrect="off" autocomplete="off" id="message_input" class="text_input">
+                    <button type="submit" class="send_button" id="send_button">Send</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

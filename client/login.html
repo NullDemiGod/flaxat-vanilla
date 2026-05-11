@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="module" src="./js/login.js"></script>
+        <title>FlaXat | Instant Messaging</title>
+    </head>
+    <body>
+        <aside class="description_sidebar">
+            <div class="logo_container">
+                <h1 class="logo_name">FlaXat</h1>
+                <p class="logo_description">Secure Session About To Be Initiated...</p>
+            </div>
+        </aside>
+        <main class="main_container">
+            <div class="auth_container">
+                <h2 class="auth_title">Log Into FlaXat</h2>
+
+                <form class="auth_form" id="login_form" action="#" method="POST">
+                    <div class="error_message" id="error_message"></div> 
+                    <div class="input_group">
+                        <input type="email" id="email" class="form_input" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="input_group">
+                        <input type="password" id="password" class="form_input" placeholder="Password" required>
+                    </div>
+
+                    <div class="button_container">
+                        <button type="submit" class="btn btn_primary" style="font-family: monospace;">Log In</button>
+                        <a href="index.html" class="btn btn_secondary">Return To Main Page</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
